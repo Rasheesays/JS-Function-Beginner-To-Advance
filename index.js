@@ -15,10 +15,6 @@ function negShowSomething() {
 showSomething();
 negShowSomething();
 
-
-
-
-
 // FUNCTION WITH A RETURN STATEMENT
 ////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////
@@ -42,10 +38,6 @@ negShowSomething();
 // let showMeEndResult = helpMeDoSomeCalcs(1, 2, 3);
 // console.log(showMeEndResult); // Outputs: 6
 
-
-
-
-
 // DEFAULT PARAMETERS
 /////////////////////////////////////////////
 /////////////////////////////////////////////
@@ -58,13 +50,49 @@ negShowSomething();
 // This helps prevent errors like `NaN` (Not a Number), which can occur when
 // operations involve `undefined` parameters.
 
-function calculateResult(a = 1, b = 1, c = 1, d = 0) {
-  // `a`, `b`, `c`, and `d` have default values assigned in case no arguments are passed.
-  let output = 2 * (a + b * c + d);
-  return output;
+// function calculateResult(a = 1, b = 1, c = 1, d = 0) {
+//   // `a`, `b`, `c`, and `d` have default values assigned in case no arguments are passed.
+//   let output = 2 * (a + b * c + d);
+//   return output;
+// }
+
+// // Calling the function with some arguments missing
+// let result = calculateResult(1, 2, 2); // `d` will use its default value of 0
+// console.log(result); // Output: 10
+
+//REST PARAMETERS
+///////////////////////////////////////
+///////////////////////////////////////
+///////////////////////////////////////
+///////////////////////////////////////
+// function food(tea = 1, ...biscuits) {
+//   let breakfast =biscuits;
+//   return breakfast;
+// }
+// let showMeMyFood = food(1, "2 cabins", "2 digestives", "3 chic choke");
+// console.log(showMeMyFood);
+
+
+
+// NESTED FUNCTIONS
+/////////////////////////////////////
+// Nested functions are functions inside another function. 
+// Think of it like a parent-child relationship: 
+// The outer function is the parent, and the inner function is the child. 
+
+// Example:
+
+function parent() {
+  let parentName = "John";  // The parent function can have variables
+  
+  function child() {
+    // The child function has access to the parent function's variables
+    console.log(`The parent is ${parentName}, and I am the child.`);
+  }
+  
+  // Calling the child function inside the parent
+  child();  // This will output: "The parent is John, and I am the child."
 }
 
-// Calling the function with some arguments missing
-let result = calculateResult(1, 2, 2); // `d` will use its default value of 0
-console.log(result); // Output: 10
-
+// Calling the parent function
+parent();
