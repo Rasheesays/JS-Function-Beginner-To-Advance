@@ -96,3 +96,44 @@ function parent() {
 
 // Calling the parent function
 parent();
+
+
+
+////////////////////////////////////////
+// FUNCTION CLOSURE
+////////////////////////////////////////
+// The example below demonstrates the concept of closure in JavaScript using a father-child analogy.
+
+// Imagine a father who owns possessions (money, house, car). 
+// A child is "born" within the father function, meaning the child is defined inside the father. 
+// This allows the child to access the father's possessions (just as in real life, 
+// children can use their father's property however they wish).
+
+// The child also has their own unique possession (knowledge), which they can combine with what the father owns. 
+// However, the father cannot access the child’s property. For example, if the child is a software developer 
+// and the father is a wealthy farmer, the father wouldn’t understand or access the programming 
+// skills or technologies the child knows.
+
+// As time passes, the father grows old, and his possessions are "handed over" to the child. 
+// The father "passes away" (the function finishes execution), but the child continues to have access 
+// to all the father's possessions through a "Will" (closure).
+
+function father(money, house, car) {
+  // The child is created inside the father and can use the father's possessions.
+  function child(knowledge) {
+    // Combining father's possessions with the child's possession.
+    let ChildLife = money + ", " + house + ", " + car + ", " + knowledge;
+    return ChildLife;
+  }
+  
+  // When the father grows old, the "Will" is prepared by returning the child function.
+  let Fatheroldage = child;
+  return Fatheroldage;
+}
+
+// The father's possessions (parameters) are passed in while he is alive.
+let Will = father("500k$", "2 Duplexes", "BMW 2024");
+// The father has now "passed away" (the function has finished executing).
+// The child continues to live and use the father's possessions along with their own.
+let ChildLife = Will("4.85 CGPA");
+console.log(ChildLife);
