@@ -137,3 +137,27 @@ let Will = father("500k$", "2 Duplexes", "BMW 2024");
 // The child continues to live and use the father's possessions along with their own.
 let ChildLife = Will("4.85 CGPA");
 console.log(ChildLife);
+///////////////////////////////////////////
+///////////////////////////////////////////
+///////////////////////////////////////////
+// REST PARAMETERS
+// With rest parameters, I can take as many arguments as I want in a function.
+// Let's enhance our car race analogy to make it more engaging:
+// Imagine you hosted a car race competition. You want to reward the top three cars 
+// (1st, 2nd, and 3rd positions) with specific prizes, while still keeping track of 
+// all the other participants for reference.
+// Using rest parameters, we can assign the top three positions to separate variables
+// and store the remaining cars in a rest parameter called `otherParticipants`.
+
+function carRace(firstPosition, secondPosition, thirdPosition, ...otherParticipants) {
+    console.log(`🏆 The winner is car number ${firstPosition}! They get a gold medal.`);
+    console.log(`🥈 Second place goes to car number ${secondPosition}! They get a silver medal.`);
+    console.log(`🥉 Third place goes to car number ${thirdPosition}! They get a bronze medal.`);
+    console.log(
+        `🚗 Here are the other participants: ${otherParticipants.length > 0 ? otherParticipants.join(", ") : "None"}`
+    );
+}
+
+// Testing the function
+carRace(1, 2, 3, 4, 5, 6, 7, 8);
+
