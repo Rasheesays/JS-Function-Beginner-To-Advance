@@ -125,10 +125,8 @@ function father(money, house, car) {
     let ChildLife = money + ", " + house + ", " + car + ", " + knowledge;
     return ChildLife;
   }
-  
-  // When the father grows old, the "Will" is prepared by returning the child function.
-  let Fatheroldage = child;
-  return Fatheroldage;
+  // Returning the child function directly as the "Will."
+  return child;
 }
 
 // The father's possessions (parameters) are passed in while he is alive.
