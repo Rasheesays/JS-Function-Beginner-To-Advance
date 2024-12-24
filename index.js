@@ -159,3 +159,18 @@ function carRace(firstPosition, secondPosition, thirdPosition, ...otherParticipa
 // Testing the function
 carRace(1, 2, 3, 4, 5, 6, 7, 8);
 
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+// Function CLOSURE Example using an investment methodology
+function investment(initialBalance) {
+  let presentBalance = initialBalance;
+  return {
+    deposit: (amount) => presentBalance += amount,
+    withdraw: (amount) => presentBalance -= amount,
+    getmyBalance: () => presentBalance
+  };
+}
+
+let account = investment(2000); // This saves how much you want to invest
+console.log(account.withdraw(1040)); // The output or balance will be 960
+console.log(account.deposit(10)); // The output or balance will be 970
