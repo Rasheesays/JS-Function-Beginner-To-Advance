@@ -174,3 +174,31 @@ function investment(initialBalance) {
 let account = investment(2000); // This saves how much you want to invest
 console.log(account.withdraw(1040)); // The output or balance will be 960
 console.log(account.deposit(10)); // The output or balance will be 970
+
+
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+// CALLBACK FUNCTION EXAMPLE
+
+// Below is an example of a callback function using a real-life shopping scenario:
+// 1. `FSorder` simulates an e-commerce system that processes customer orders.
+// 2. The callback function simulates a response handler for the customer's order status.
+
+FSorder("Keyboard", "Mouse", function (fetchOrderResult) {
+  console.log(fetchOrderResult);
+}); // The reason this function is called before its definition is due to hoisting. 
+// This allows functions to be executed before they are defined in the code.
+
+// Function definition for the e-commerce system
+function FSorder(order1, order2, callback) {
+  console.log(
+    `Hi Customer, your order of ${order1} and ${order2} is being processed. Please wait 5 seconds for a status update.`
+  );
+
+  // Simulate processing delay using setTimeout
+  setTimeout(() => {
+    const fetchOrderResult = "Your order has been sent!";
+    callback(fetchOrderResult); // Call the callback function with the result
+  }, 5000);
+}
